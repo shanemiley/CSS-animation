@@ -1,0 +1,109 @@
+body{
+    background-color: rgba(24, 23, 23, 0.808)
+}
+:root{
+    --size:100px;
+}
+
+#hex1 {
+    width: var(--size);
+    height: var(--size);
+    display: inline-block;
+    animation: translate1 3000ms infinite;
+  }
+  #hex2 {
+    width: var(--size);
+    height: var(--size);
+    display: inline-block;
+    animation: translate2 3000ms infinite;
+    
+  }
+  #hex3 {
+    width: var(--size);
+    height: var(--size);
+    animation: translate3 3000ms infinite;
+    
+  }
+
+  #color1 {
+    background-color: #39D; 
+    
+  }
+  .hexagon-wrapper {
+    /* text-align: center;
+    margin: 20px;
+    position: relative;
+     */
+     text-align: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        
+      
+    
+   
+  }
+
+.hexagon {
+    height: 100%;
+    width: calc(100% * 0.57735);
+    display: inline-block;
+    
+  }
+  
+  .hexagon:before {
+    position: absolute;
+    top: 0;
+    right: calc((100% / 2) - ((100% * 0.57735) / 2));
+    background-color: inherit;
+    height: inherit;
+    width: inherit;
+    content: '';
+    transform: rotateZ(60deg);
+  }
+  
+  .hexagon:after {
+    position: absolute;
+    top: 0;
+    right: calc((100% / 2) - ((100% * 0.57735) / 2));
+    background-color: inherit;
+    height: inherit;
+    width: inherit;
+    content: '';
+    transform: rotateZ(-60deg);
+  }
+
+
+  @keyframes translate1{
+    50% {
+        transform: translate(-100px,100px)rotate(360deg);
+    }
+    100% {
+        transform: translate(0,0);
+    }
+}
+@keyframes translate2{
+    50% {
+        transform: translate(100px, 100px)rotate(360deg);
+    }
+    100% {
+        transform: translate(0,0);
+    }
+}
+@keyframes translate3{
+    50% {
+        transform: translate(0, -100px) rotate(360deg);
+    }
+    100% {
+        transform:  translate(0,0) ;
+    }
+}
+@keyframes spin {
+	from {
+			transform:rotate(0deg);
+	}
+	to {
+			transform:rotate(360deg);
+	}
+}
+
